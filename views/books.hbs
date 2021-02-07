@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <h1>Book Directory</h1>
+   {{#each books}}
+        <div>
+            <p>Title : {{this.title}}</p>
+            <p>Author : {{this.author}}</p>
+            <p>Number of copies in stock : {{this.numCopies}}</p>
+            <form method="POST" action="../deleteBook">
+            <input type="hidden" name="bookId" value="{{this.id}}">
+              <button value="submit" type="submit">Delete Book</button>
+            </form>
+        </div>
+    {{/each}}
+    <h2>Add Book: </h2>
+    <form method="POST" action="../addBook">
+      <label for="name">Title:</label><br>
+      <input type="text" id="title" name="title"><br>
+      <label for="author">Author:</label><br>
+      <input type="text" id="author" name="author"><br>
+      <label for="numCopies">Number Of Copies To Add:</label><br>
+      <input type="text" id="numCopies" name="numCopies"><br><br>
+      <button type="submit" value="Submit">Add Book</button>
+    </form> 
+  </body>
+</html>

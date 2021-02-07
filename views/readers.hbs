@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <h1>Library Members Page</h1>
+   {{#each readers}}
+        <div>
+            <p>Name : {{this.name}}</p>
+            <p>Email : {{this.email}}</p>
+            <form method="GET" action="../getLoanRecords">
+            <input type="hidden" name="readerId" value="{{this.id}}">
+              <button value="submit" type="submit">See Member's Loan Record</button>
+            </form>
+            <form method="POST" action="../deleteReaders">
+            <input type="hidden" name="readerId" value="{{this.id}}">
+              <button value="submit" type="submit">Delete Member</button>
+            </form>
+            <form method="POST" action="../updateReader">
+            <p>Update Member's Details: </p>
+            <input type="hidden" name="readerId" value="{{this.id}}">
+            <input id="memberName" type="text" name="name" value="{{this.name}}">
+            <input id="memberEmail" type="text" name="email" value="{{this.email}}"><br>
+              <button value="submit" type="submit">Update Member</button>
+            </form>
+        </div>
+    {{/each}}
+    <h2>Add User: </h2>
+    <form method="POST" action="../createReader">
+      <label for="name">First name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="email">Email:</label><br>
+      <input type="text" id="email" name="email"><br><br>
+      <button type="submit" value="Submit">Add Reader</button>
+    </form> 
+
+ 
+  </body>
+</html>
