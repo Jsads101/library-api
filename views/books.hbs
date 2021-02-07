@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html> 
   <head>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
   <body>
-    <h1>Book Directory</h1>
+    <h1 class="creamText">Book Directory</h1>
+    <a class="link" href="#addBook">Jump To Add Book</a>
    {{#each books}}
-        <div>
-            <p>Title : {{this.title}}</p>
-            <p>Author : {{this.author}}</p>
-            <p>Number of copies in stock : {{this.numCopies}}</p>
+        <div class="displaySection">
+            <p><strong>Title :</strong> {{this.title}}</p>
+            <p><strong>Author :</strong> {{this.author}}</p>
+            <p><strong>Number of copies in stock :</strong> {{this.numCopies}}</p>
             <form method="POST" action="../deleteBook">
             <input type="hidden" name="bookId" value="{{this.id}}">
               <button value="submit" type="submit">Delete Book</button>
             </form>
         </div>
     {{/each}}
-    <h2>Add Book: </h2>
-    <form method="POST" action="../addBook">
-      <label for="name">Title:</label><br>
-      <input type="text" id="title" name="title"><br>
-      <label for="author">Author:</label><br>
-      <input type="text" id="author" name="author"><br>
-      <label for="numCopies">Number Of Copies To Add:</label><br>
-      <input type="text" id="numCopies" name="numCopies"><br><br>
-      <button type="submit" value="Submit">Add Book</button>
-    </form> 
+    <div class="displaySection">
+      <h2><a id="addBook">Add Book:</a></h2>
+      <div class="flexBox">
+        <form method="POST" action="../addBook">
+          <div>
+            <label for="name"><strong>Title:</strong></label><br>
+            <input type="text" id="title" name="title"><br>
+          </div>
+          <div>
+            <label for="author"><strong>Author:</strong></label><br>
+            <input type="text" id="author" name="author"><br>
+          </div>
+          <div>
+            <label for="numCopies"><strong>Number Of Copies To Add:</strong></label><br>
+            <input type="text" id="numCopies" name="numCopies"><br><br>
+          </div>
+          <button type="submit" value="Submit">Add Book</button>
+        </form> 
+      </div>
+    </div>
   </body>
 </html>

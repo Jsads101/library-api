@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html> 
   <head>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
   <body>
-    <h1>Book Loan Application</h1>
-    <h2>What would you like to do?</h2>
-    <h2>View and Update Reader Directory: </h2>
-    <form method="GET" action="../listReaders">
-      <button type="submit" value="Submit">Reader Directory</button>
-    </form> 
-    
-    <h2>View and Update Book Directory: </h2>
-    <form method="GET" action="../getBookList">
-      <button type="submit" value="Submit">Book Directory</button>
-    </form> 
-
-    <h2>View Loans / Create Loans </h2>
-    <form method="GET" action="../getAllLoanRecords">
-      <button type="submit" value="Submit">Loans</button>
-    </form> 
-   
+    <h1 class="creamText">Book Loan Application</h1>
+    <h2 class="creamText secondHeading">What would you like to do?</h2>
+    <div class="displaySection">
+      <h2>View and Update Reader Directory: </h2>
+      <form method="GET" action="../listReaders">
+        <button type="submit" value="Submit">Go to Reader Directory</button>
+      </form> 
+    </div>
+    <div class="displaySection">
+      <h2>View and Update Book Directory: </h2>
+      <form method="GET" action="../getBookList">
+        <button type="submit" value="Submit">Go to Book Directory</button>
+      </form> 
+    </div>
+    <div class="displaySection">
+      <h2>View Loans / Create Loans </h2>
+      <form method="GET" action="../getAllLoanRecords">
+        <button type="submit" value="Submit">Go to Loans</button>
+      </form> 
+   </div>
   </body>
 </html>

@@ -17,7 +17,7 @@ const loanRecordControllers = require("./controllers/loanRecords");
 app.engine("hbs", handlebars({extname: "hbs", defaultLayout: false, layoutsDir: "views/layouts", partialsDir: "views/partials"}));
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "../views"));
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/", (req,res) => {
     res.render("index")

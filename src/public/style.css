@@ -1,0 +1,80 @@
+body{
+    font-family: arial;
+    text-align: center;
+    padding-top: 3rem;
+    background-image: url("librarybackground.jpg");
+}
+
+.displaySection {
+    border: 1px solid black;
+    opacity: 100;
+    background:#fffdd0;
+    width: 50%;
+    margin: 1rem auto;
+    padding: 0.1rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.creamText {
+    color: #fffdd0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.secondHeading {
+    font-size: 2.3rem;
+}
+
+button {
+    padding: 0.5rem;
+    color: #fffdd0;
+    background-color: brown;
+    border: none;
+}
+
+button:hover {
+    background-color: navy;
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flexChild {
+    width: auto;
+}
+
+input {
+    margin: 0.5rem 0rem 0.8rem 0rem;
+    padding: 0.3rem;
+    width: 20rem;
+}
+
+#updateSection {
+    display: none;
+}
+
+div[id*="updateSection"] {
+    display: none;
+}
+
+.link {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.link:hover {
+    color: #fffdd0;
+}
+
+select {
+    padding: 0.4rem;
+    margin: 0.5rem;
+}
+}
+
+

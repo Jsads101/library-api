@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html> 
   <head>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
   <body>
-    <h1>Loan Records</h1>
+    <h1 class="creamText">Loan Records</h1>
+    <a class="link" href="#createLoan">Jump To Create a Loan</a>
    {{#each loanRecordsList}}
-        <div>
+        <div class="displaySection">
             <p>Book ID: {{this.bookId}}</p>
             <p>Reader ID: {{this.readerId}}</p>
             <form method="POST" action="../deleteLoanRecord">
@@ -17,23 +18,26 @@
             </form>
         </div>
     {{/each}}
-
-    <h2>Create Loan: </h2>
+    <div class="displaySection">
+    <h2><a id="createLoan">Create Loan:</a></h2>
     <form method="POST" action="../createLoanRecord">
-      <select name="bookId">
-          <option selected>Choose Book</option>
-          {{#each bookList}}
-              <option value="{{this.id}}">{{this.title}}</option>
-          {{/each}}
-      </select>
-      <select name="readerId">
-          <option selected>Choose Member</option>
-          {{#each readerList}}
-              <option value="{{this.id}}">{{this.name}}</option>
-          {{/each}}
-      </select>
+      <div class="flexBox">
+        <select name="bookId">
+            <option selected>Choose Book</option>
+            {{#each bookList}}
+                <option value="{{this.id}}">{{this.title}}</option>
+            {{/each}}
+        </select>
+        <select name="readerId">
+            <option selected>Choose Member</option>
+            {{#each readerList}}
+                <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+      </div>
       <button type="submit">Loan Book</button>
     </form> 
+    </div>
 
   </body>
 </html>
